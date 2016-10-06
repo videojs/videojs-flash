@@ -197,7 +197,11 @@ class Flash extends Tech {
     if (seekable.length) {
       // clamp to the current seekable range
       time = time > seekable.start(0) ? time : seekable.start(0);
-      time = time < seekable.end(seekable.length - 1) ? time : seekable.end(seekable.length - 1);
+      if (time < seekable.end(seekable.length - 1)) {
+        time = time;
+      } else {
+        time = seekable.end(seekable.length - 1);
+      }
 
       this.lastSeekTarget_ = time;
       this.trigger('seeking');
@@ -485,7 +489,8 @@ Flash.onReady = function(currSwf) {
   }
 };
 
-// The SWF isn't always ready when it says it is. Sometimes the API functions still need to be added to the object.
+// The SWF isn't always ready when it says it is.
+// Sometimes the API functions still need to be added to the object.
 // If it's not ready, we set a timeout to check again shortly.
 Flash.checkReady = function(tech) {
   // stop worrying if the tech has been disposed
@@ -531,13 +536,20 @@ Flash.version = function() {
 
   // IE
   try {
-    version = new window.ActiveXObject('ShockwaveFlash.ShockwaveFlash').GetVariable('$version').replace(/\D+/g, ',').match(/^,?(.+),?$/)[1];
+    version = new window
+      .ActiveXObject('ShockwaveFlash.ShockwaveFlash')
+      .GetVariable('$version')
+      .replace(/\D+/g, ',')
+      .match(/^,?(.+),?$/)[1];
 
   // other browsers
   } catch (e) {
     try {
       if (navigator.mimeTypes['application/x-shockwave-flash'].enabledPlugin) {
-        version = (navigator.plugins['Shockwave Flash 2.0'] || navigator.plugins['Shockwave Flash']).description.replace(/\D+/g, ',').match(/^,?(.+),?$/)[1];
+        version = (navigator.plugins['Shockwave Flash 2.0'] ||
+                   navigator.plugins['Shockwave Flash'])
+          .description.replace(/\D+/g, ',')
+          .match(/^,?(.+),?$/)[1];
       }
     } catch (err) {
       // satisfy linter
