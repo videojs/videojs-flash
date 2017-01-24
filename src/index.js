@@ -892,7 +892,7 @@ Flash.formats = {
  * ready using {@link Flash#checkReady}
  */
 Flash.onReady = function(currSwf) {
-  const el = Dom.getEl(currSwf);
+  const el = Dom.$('#' + currSwf);
   const tech = el && el.tech;
 
   // if there is no el then the tech has been disposed
@@ -939,7 +939,7 @@ Flash.checkReady = function(tech) {
  *        The name of the event to trigger
  */
 Flash.onEvent = function(swfID, eventName) {
-  const tech = Dom.getEl(swfID).tech;
+  const tech = Dom.$('#' + swfID).tech;
   const args = Array.prototype.slice.call(arguments, 2);
 
   // dispatch Flash events asynchronously for two reasons:
@@ -966,7 +966,7 @@ Flash.onEvent = function(swfID, eventName) {
  *          - Returns undefined otherwise.
  */
 Flash.onError = function(swfID, err) {
-  const tech = Dom.getEl(swfID).tech;
+  const tech = Dom.$('#' + swfID).tech;
 
   // trigger MEDIA_ERR_SRC_NOT_SUPPORTED
   if (err === 'srcnotfound') {
