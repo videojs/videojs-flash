@@ -4,9 +4,9 @@ module.exports = function(config) {
     usePhantomJS: false
   };
 
-  // On Travis CI, we can only run in Firefox.
+  // On Travis CI, we only want to run on Firefox, and Chrome.
   if (process.env.TRAVIS) {
-    config.browsers = ['Firefox'];
+    config.browsers = ['Firefox', 'travisChrome'];
   }
 
   // If no browsers are specified, we enable `karma-detect-browsers`
@@ -28,6 +28,12 @@ module.exports = function(config) {
     ],
 
     detectBrowsers: detectBrowsers,
+    customLaunchers: {
+      travisChrome: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
     reporters: ['dots'],
     port: 9876,
     colors: true,

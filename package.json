@@ -77,7 +77,7 @@
   "dependencies": {
     "browserify-versionify": "^1.0.6",
     "global": "^4.3.1",
-    "video.js": "^5.10.1",
+    "video.js": "^6.0.0-RC.1",
     "videojs-swf": "^5.1.0"
   },
   "devDependencies": {
