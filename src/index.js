@@ -1101,7 +1101,7 @@ if (Tech.getTech('Flash')) {
   videojs.log.warn('Not using videojs-flash as it appears to already be registered');
   videojs.log.warn('videojs-flash should only be used with video.js@6 and above');
 } else {
-  Tech.registerTech('Flash', Flash);
+  videojs.registerTech('Flash', Flash);
 }
 
 export default Flash;
