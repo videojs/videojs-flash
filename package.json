@@ -119,5 +119,13 @@
     "ghooks": {
       "pre-push": "npm run lint"
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/videojs/videojs-flash.git"
+  },
+  "bugs": {
+    "url": "https://github.com/videojs/videojs-flash/issues"
+  },
+  "homepage": "https://github.com/videojs/videojs-flash#readme"
 }
