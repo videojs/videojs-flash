@@ -1097,6 +1097,11 @@ Flash.getEmbedCode = function(swf, flashVars, params, attributes) {
 // Run Flash through the RTMP decorator
 FlashRtmpDecorator(Flash);
 
-Tech.registerTech('Flash', Flash);
+if (Tech.getTech('Flash')) {
+  videojs.log.warn('Not using videojs-flash as it appears to already be registered');
+  videojs.log.warn('videojs-flash should only be used with video.js@6 and above');
+} else {
+  videojs.registerTech('Flash', Flash);
+}
 
 export default Flash;
