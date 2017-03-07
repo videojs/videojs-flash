@@ -3,7 +3,6 @@
   "version": "1.0.0-RC.1",
   "description": "The official flash tech package for the videojs player.",
   "main": "es5/index.js",
-  "jsnext:main": "src/index.js",
   "scripts": {
     "prebuild": "npm run clean",
     "build": "npm-run-all -p build:*",
@@ -82,6 +81,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
+    "babel-plugin-inline-json": "^1.1.2",
     "babel-plugin-transform-es3-member-expression-literals": "^6.8.0",
     "babel-plugin-transform-es3-property-literals": "^6.8.0",
     "babel-plugin-transform-object-assign": "^6.8.0",
