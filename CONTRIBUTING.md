@@ -12,7 +12,7 @@ Make sure you have NodeJS 0.10 or higher and npm installed.
 
 ### Making Changes
 
-Refer to the [video.js plugin standards][standards] for more detail on best practices and tooling for video.js plugin authorship.
+Refer to the [video.js standards][standards] for more detail on best practices and tooling for video.js plugin/tech authorship.
 
 When you've made your changes, push your commit(s) to your fork and issue a pull request against the original repository.
 

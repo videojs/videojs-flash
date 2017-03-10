@@ -34,7 +34,8 @@
   },
   "keywords": [
     "videojs",
-    "videojs-plugin"
+    "videojs-plugin",
+    "videojs-tech"
   ],
   "author": "Brightcove, Inc.",
   "license": "Apache-2.0",
@@ -50,7 +51,6 @@
   },
   "style": "dist/videojs-flash.css",
   "videojs-plugin": {
-    "style": "dist/videojs-flash.css",
     "script": "dist/videojs-flash.min.js"
   },
   "vjsstandard": {
