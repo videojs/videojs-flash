@@ -11,7 +11,7 @@ import path from 'path';
 
 const pkg = require(path.join(__dirname, '../package.json'));
 
-// Replace "%s" tokens with the plugin name in a string.
+// Replace "%s" tokens with the project name in a string.
 const nameify = (str) =>
   str.replace(/%s/g, pkg.name.split('/').reverse()[0]);
 
