@@ -364,7 +364,8 @@ const _readOnly = [
   'paused',
   'ended',
   'videoWidth',
-  'videoHeight'
+  'videoHeight',
+  'getVideoPlaybackQuality'
 ];
 const _api = Flash.prototype;
 

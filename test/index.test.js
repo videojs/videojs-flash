@@ -261,3 +261,28 @@ QUnit.test('duration returns NaN, Infinity or duration according to the HTML sta
               'duration returns duration property when readyState' +
               ' and duration property are both higher than 0');
 });
+
+QUnit.test('getVideoPlaybackQuality API exists', function(assert) {
+  const propertyCalls = [];
+  const mockFlash = {
+    el_: {
+      /* eslint-disable camelcase */
+      vjs_getProperty(attr) {
+        propertyCalls.push(attr);
+        return 4;
+      }
+      /* eslint-enable camelcase */
+    }
+  };
+
+  assert.equal(typeof Flash.prototype.getVideoPlaybackQuality,
+               'function',
+               'getVideoPlaybackQuality is a function');
+  assert.equal(Flash.prototype.getVideoPlaybackQuality.call(mockFlash),
+               4,
+               'called to get property from flash');
+  assert.equal(propertyCalls.length, 1, 'only one property call');
+  assert.equal(propertyCalls[0],
+               'getVideoPlaybackQuality',
+               'called for getVideoPlaybackQuality');
+});
