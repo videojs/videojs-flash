@@ -1,6 +1,7 @@
 import Flash from '../src/js';
 import {createTimeRange} from 'video.js';
 import {document} from 'global';
+import {window} from 'global/window';
 import sinon from 'sinon';
 import QUnit from 'qunitjs';
 
@@ -264,12 +265,13 @@ QUnit.test('duration returns NaN, Infinity or duration according to the HTML sta
 
 QUnit.test('getVideoPlaybackQuality API exists', function(assert) {
   const propertyCalls = [];
+  const videoPlaybackQuality = { test: 'test' };
   const mockFlash = {
     el_: {
       /* eslint-disable camelcase */
       vjs_getProperty(attr) {
         propertyCalls.push(attr);
-        return 4;
+        return videoPlaybackQuality;
       }
       /* eslint-enable camelcase */
     }
@@ -278,11 +280,63 @@ QUnit.test('getVideoPlaybackQuality API exists', function(assert) {
   assert.equal(typeof Flash.prototype.getVideoPlaybackQuality,
                'function',
                'getVideoPlaybackQuality is a function');
-  assert.equal(Flash.prototype.getVideoPlaybackQuality.call(mockFlash),
-               4,
-               'called to get property from flash');
+  assert.deepEqual(Flash.prototype.getVideoPlaybackQuality.call(mockFlash),
+                   videoPlaybackQuality,
+                   'called to get property from flash');
   assert.equal(propertyCalls.length, 1, 'only one property call');
   assert.equal(propertyCalls[0],
                'getVideoPlaybackQuality',
                'called for getVideoPlaybackQuality');
+});
+
+QUnit.test('getVideoPlaybackQuality uses best available creationTime', function(assert) {
+  const origPerformance = window.performance;
+  const origDate = window.Date;
+  const videoPlaybackQuality = {};
+  const mockFlash = {
+    el_: {
+      /* eslint-disable camelcase */
+      vjs_getProperty(attr) {
+        return videoPlaybackQuality;
+      }
+      /* eslint-enable camelcase */
+    }
+  };
+
+  window.performance = void 0;
+  assert.notOk(Flash.prototype.getVideoPlaybackQuality.call(mockFlash).creationTime,
+               'no creationTime when no performance API available');
+
+  window.performance = {
+    timing: {}
+  };
+  assert.notOk(Flash.prototype.getVideoPlaybackQuality.call(mockFlash).creationTime,
+               'no creationTime when performance API insufficient');
+
+  window.performance = {
+    now: () => 4
+  };
+  assert.equal(Flash.prototype.getVideoPlaybackQuality.call(mockFlash).creationTime,
+               4,
+               'creationTime is performance.now when available');
+
+  window.Date = {
+    now: () => 10
+  };
+  window.performance = {
+    timing: {
+      navigationStart: 3
+    }
+  };
+  assert.equal(Flash.prototype.getVideoPlaybackQuality.call(mockFlash).creationTime,
+               7,
+               'creationTime uses Date.now() - navigationStart when available');
+
+  window.performance.now = () => 4;
+  assert.equal(Flash.prototype.getVideoPlaybackQuality.call(mockFlash).creationTime,
+               4,
+               'creationTime prioritizes performance.now when available');
+
+  window.Date = origDate;
+  window.performance = origPerformance;
 });
