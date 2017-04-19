@@ -7,7 +7,7 @@
 
 import videojs from 'video.js';
 import FlashRtmpDecorator from './rtmp';
-import window from 'global/window';
+import {window} from 'global';
 
 const Tech = videojs.getComponent('Tech');
 const Dom = videojs.dom;
@@ -15,7 +15,7 @@ const Url = videojs.url;
 const createTimeRange = videojs.createTimeRange;
 const mergeOptions = videojs.mergeOptions;
 
-const navigator = window.navigator;
+const navigator = window && window.navigator || {};
 
 /**
  * Flash Media Controller - Wrapper for Flash Media API
