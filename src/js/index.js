@@ -7,7 +7,7 @@
 
 import videojs from 'video.js';
 import FlashRtmpDecorator from './rtmp';
-import window from 'global/window';
+import {window} from 'global';
 
 const Tech = videojs.getComponent('Tech');
 const Dom = videojs.dom;
@@ -15,7 +15,7 @@ const Url = videojs.url;
 const createTimeRange = videojs.createTimeRange;
 const mergeOptions = videojs.mergeOptions;
 
-const navigator = window.navigator;
+const navigator = window && window.navigator || {};
 
 /**
  * Flash Media Controller - Wrapper for Flash Media API
@@ -45,7 +45,8 @@ class Flash extends Tech {
       }, true);
     }
 
-    // Having issues with Flash reloading on certain page actions (hide/resize/fullscreen) in certain browsers
+    // Having issues with Flash reloading on certain page actions
+    // (hide/resize/fullscreen) in certain browsers
     // This allows resetting the playhead when we catch the reload
     if (options.startTime) {
       this.ready(function() {
@@ -175,10 +176,6 @@ class Flash extends Tech {
    *
    * @param {Tech~SourceObject} [src]
    *        The source object you want to set on the `Flash` techs.
-   *
-   * @return {Tech~SourceObject|undefined}
-   *         - The current source object when a source is not passed in.
-   *         - undefined when setting
    */
   setSrc(src) {
     // Make sure source URL is absolute.
@@ -215,7 +212,8 @@ class Flash extends Tech {
     if (seekable.length) {
       // clamp to the current seekable range
       time = time > seekable.start(0) ? time : seekable.start(0);
-      time = time < seekable.end(seekable.length - 1) ? time : seekable.end(seekable.length - 1);
+      time = time < seekable.end(seekable.length - 1) ?
+        time : seekable.end(seekable.length - 1);
 
       this.lastSeekTarget_ = time;
       this.trigger('seeking');
@@ -370,6 +368,14 @@ const _readOnly = [
 ];
 const _api = Flash.prototype;
 
+/**
+ * Create setters for the swf on the element
+ *
+ * @param {string} attr
+ *        The name of the parameter
+ *
+ * @private
+ */
 function _createSetter(attr) {
   const attrUpper = attr.charAt(0).toUpperCase() + attr.slice(1);
 
@@ -378,6 +384,14 @@ function _createSetter(attr) {
   };
 }
 
+/**
+ * Create petters for the swf on the element
+ *
+ * @param {string} attr
+ *        The name of the parameter
+ *
+ * @private
+ */
 function _createGetter(attr) {
   _api[attr] = function() {
     return this.el_.vjs_getProperty(attr);
@@ -832,6 +846,15 @@ Flash.nativeSourceHandler.canPlayType = function(type) {
 Flash.nativeSourceHandler.canHandleSource = function(source, options) {
   let type;
 
+  /**
+   * Guess the mime type of a file if it does not have one
+   *
+   * @param {Tech~SourceObject} src
+   *        The source object to guess the mime type for
+   *
+   * @return {string}
+   *         The mime type that was guessed
+   */
   function guessMimeType(src) {
     const ext = Url.getFileExtension(src);
 
@@ -890,6 +913,9 @@ Flash.formats = {
 /**
  * Called when the the swf is "ready", and makes sure that the swf is really
  * ready using {@link Flash#checkReady}
+ *
+ * @param {Object} currSwf
+ *        The current swf object
  */
 Flash.onReady = function(currSwf) {
   const el = Dom.$('#' + currSwf);
@@ -958,7 +984,7 @@ Flash.onEvent = function(swfID, eventName) {
  * @param {number} swfID
  *        The id of the swf that had an error.
  *
- * @param {string} The error string
+ * @param {string} err
  *        The error to set on the Flash Tech.
  *
  * @return {MediaError|undefined}
@@ -988,13 +1014,20 @@ Flash.version = function() {
 
   // IE
   try {
-    version = new window.ActiveXObject('ShockwaveFlash.ShockwaveFlash').GetVariable('$version').replace(/\D+/g, ',').match(/^,?(.+),?$/)[1];
+    version = new window.ActiveXObject('ShockwaveFlash.ShockwaveFlash')
+      .GetVariable('$version')
+      .replace(/\D+/g, ',')
+      .match(/^,?(.+),?$/)[1];
 
   // other browsers
   } catch (e) {
     try {
       if (navigator.mimeTypes['application/x-shockwave-flash'].enabledPlugin) {
-        version = (navigator.plugins['Shockwave Flash 2.0'] || navigator.plugins['Shockwave Flash']).description.replace(/\D+/g, ',').match(/^,?(.+),?$/)[1];
+        version = (navigator.plugins['Shockwave Flash 2.0'] ||
+          navigator.plugins['Shockwave Flash'])
+          .description
+          .replace(/\D+/g, ',')
+          .match(/^,?(.+),?$/)[1];
       }
     } catch (err) {
       // satisfy linter

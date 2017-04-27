@@ -1,9 +1,8 @@
-/* eslint-env qunit */
-import Flash from '../src';
+import Flash from '../src/js';
 import {createTimeRange} from 'video.js';
-import document from 'global/document';
+import {document} from 'global';
 import sinon from 'sinon';
-// import QUnit from 'qunitjs';
+import QUnit from 'qunitjs';
 
 // fake out the <object> interaction but leave all the other logic intact
 class MockFlash extends Flash {

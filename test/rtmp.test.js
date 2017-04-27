@@ -1,6 +1,5 @@
-/* eslint-env qunit */
-// import QUnit from 'qunitjs';
-import Flash from '../src';
+import Flash from '../src/js';
+import QUnit from 'qunitjs';
 
 QUnit.module('Flash RTMP');
 
