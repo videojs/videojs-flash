@@ -41,7 +41,7 @@
   "devDependencies": {
     "husky": "^0.13.1",
     "sinon": "~1.14.0",
-    "videojs-spellbook": "^4.0.0"
+    "videojs-spellbook": "^4.0.1"
   },
   "repository": {
     "type": "git",
@@ -56,7 +56,7 @@
     "node": ">=4.4.0"
   },
   "generator-videojs-plugin": {
-    "version": "4.0.0"
+    "version": "4.0.1"
   },
   "spellbook": {
     "css": false,
