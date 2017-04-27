@@ -60,6 +60,7 @@
   },
   "spellbook": {
     "css": false,
+    "ie8": true,
     "lang": false,
     "docs": false
   }
