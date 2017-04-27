@@ -1,6 +1,6 @@
 {
   "name": "videojs-flash",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The official Flash tech package for Video.js.",
   "main": "build/es5/index.js",
   "scripts": {
