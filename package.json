@@ -1,7 +1,7 @@
 {
   "name": "videojs-flash",
   "version": "1.0.0-RC.2",
-  "description": "The official flash tech package for the videojs player.",
+  "description": "The official Flash tech package for Video.js.",
   "main": "build/es5/index.js",
   "scripts": {
     "build": "sb-build",
@@ -34,8 +34,8 @@
     "src/"
   ],
   "dependencies": {
-    "global": "^4.3.1",
-    "video.js": "^5.16.0",
+    "global": "^4.3.2",
+    "video.js": "^6.0.1",
     "videojs-swf": "^5.2.0"
   },
   "devDependencies": {
@@ -56,11 +56,11 @@
     "node": ">=4.4.0"
   },
   "generator-videojs-plugin": {
-    "version": "3.2.0"
+    "version": "4.0.0"
   },
   "spellbook": {
     "css": false,
     "lang": false,
-    "ie8": true
+    "docs": false
   }
 }
