@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "husky": "^0.13.1",
-    "sinon": "~1.14.0",
+    "sinon": "~2.2.0",
     "videojs-spellbook": "^4.0.1"
   },
   "repository": {
