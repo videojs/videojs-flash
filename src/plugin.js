@@ -6,8 +6,10 @@
  */
 
 import videojs from 'video.js';
+import {version as SWF_VERSION} from 'videojs-swf/package.json';
+import {version as VERSION} from '../package.json';
 import FlashRtmpDecorator from './rtmp';
-import {window} from 'global';
+import window from 'global/window';
 
 const Tech = videojs.getComponent('Tech');
 const Dom = videojs.dom;
@@ -86,9 +88,7 @@ class Flash extends Tech {
     // Otherwise this adds a CDN url.
     // The CDN also auto-adds a swf URL for that specific version.
     if (!options.swf) {
-      const ver = require('videojs-swf/package.json').version;
-
-      options.swf = `//vjs.zencdn.net/swf/${ver}/video-js.swf`;
+      options.swf = `//vjs.zencdn.net/swf/${SWF_VERSION}/video-js.swf`;
     }
 
     // Generate ID for swf object
@@ -1159,5 +1159,7 @@ if (Tech.getTech('Flash')) {
 } else {
   videojs.registerTech('Flash', Flash);
 }
+
+Flash.VERSION = VERSION;
 
 export default Flash;

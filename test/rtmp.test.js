@@ -1,5 +1,5 @@
-import Flash from '../src/js';
-import QUnit from 'qunitjs';
+import Flash from '../src/plugin';
+import QUnit from 'qunit';
 
 QUnit.module('Flash RTMP');
 

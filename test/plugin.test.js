@@ -1,9 +1,9 @@
-import Flash from '../src/js';
+import Flash from '../src/plugin';
 import {createTimeRange} from 'video.js';
-import {document} from 'global';
-import {window} from 'global/window';
+import document from 'global/document';
+import window from 'global/window';
 import sinon from 'sinon';
-import QUnit from 'qunitjs';
+import QUnit from 'qunit';
 
 // fake out the <object> interaction but leave all the other logic intact
 class MockFlash extends Flash {
