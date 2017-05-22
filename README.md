@@ -71,7 +71,7 @@ videojs('some-video-id', {techOrder: ['flash', 'html5']});
 
 If you don't want to fallback to the HTML5 and only want to use the Flash tech you can do this:
 ```js
-videojs('some-video-id', {techOrder: ['flash'});
+videojs('some-video-id', {techOrder: ['flash']});
 ```
 
 [See the video.js docs](https://github.com/videojs/video.js/blob/master/docs/guides/setup.md#options) for additional information and other ways to set options in video.js
