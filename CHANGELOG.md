@@ -1,3 +1,10 @@
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/videojs/videojs-flash/compare/v2.0.0...v2.0.1) (2017-07-27)
+
+### Chores
+
+* **package:** update to swf 5.4.1 ([#28](https://github.com/videojs/videojs-flash/issues/28)) ([b9fcbad](https://github.com/videojs/videojs-flash/commit/b9fcbad))
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/videojs/videojs-flash/compare/v1.0.0-RC.0...v2.0.0) (2017-05-23)
 
