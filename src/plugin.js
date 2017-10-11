@@ -822,10 +822,10 @@ Flash.isSupported = function() {
   // for IE
   if (videojs.browser.IE_VERSION >= 11) {
     return Flash.version()[0] >= 10;
-  } else {
-    // for other browsers
-    return true;
-  }
+  } 
+  // for other browsers
+  return true;
+  
 };
 
 // Add Source Handler pattern functions to this tech
