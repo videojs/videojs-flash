@@ -820,7 +820,7 @@ for (let i = 0; i < _readOnly.length; i++) {
  */
 Flash.isSupported = function() {
   // for IE
-  if (videojs.browser.IE_VERSION >= 11) {
+  if (videojs.browser.IE_VERSION) {
     return Flash.version()[0] >= 10;
   }
   // for other browsers
