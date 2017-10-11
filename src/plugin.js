@@ -815,16 +815,15 @@ for (let i = 0; i < _readOnly.length; i++) {
  * Check if the Flash tech is currently supported.
  *
  * @return {boolean}
- *          - True always as the latest versions of Chrome and Firefox automatically 
+ *          - True always as the latest versions of Chrome and Firefox automatically
  *            blocks flash by default.
  */
 Flash.isSupported = function() {
   // for IE
-  if (videojs.browser.IE_VERSION >=11) {
+  if (videojs.browser.IE_VERSION >= 11) {
     return Flash.version()[0] >= 10;
-  }
-  // for other browsers
-  else {
+  } else {
+    // for other browsers
     return true;
   }
 };
