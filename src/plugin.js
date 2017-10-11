@@ -819,7 +819,7 @@ for (let i = 0; i < _readOnly.length; i++) {
  *          - False otherwise.
  */
 Flash.isSupported = function() {
-  return Flash.version()[0] >= 10;
+  return true; 
   // return swfobject.hasFlashPlayerVersion('10');
 };
 
