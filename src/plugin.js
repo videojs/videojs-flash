@@ -39,6 +39,7 @@ class Flash extends Tech {
   */
   constructor(options, ready) {
     super(options, ready);
+    this.player_ = videojs(options.playerId);
 
     // Set the source when ready
     if (options.source) {
@@ -218,6 +219,8 @@ class Flash extends Tech {
       this.lastSeekTarget_ = time;
       this.trigger('seeking');
       this.el_.vjs_setProperty('currentTime', time);
+      // set currentTime cache
+      this.player_.currentTime();
       super.setCurrentTime();
     }
   }
