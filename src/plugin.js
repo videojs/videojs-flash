@@ -815,16 +815,16 @@ for (let i = 0; i < _readOnly.length; i++) {
  * Check if the Flash tech is currently supported.
  *
  * @return {boolean}
- *          - True always as the latest versions of Chrome and Firefox automatically
- *            blocks flash by default.
+ *          - True for Chrome and Safari Desktop and if flash tech is supported
+ *          - False otherwise
  */
 Flash.isSupported = function() {
-  // for IE
-  if (videojs.browser.IE_VERSION) {
-    return Flash.version()[0] >= 10;
+  // for Chrome Desktop and Safari Desktop
+  if (videojs.browser.IS_CHROME || videojs.browser.IS_SAFARI) {
+    return true;
   }
   // for other browsers
-  return true;
+  return Flash.version()[0] >= 10;
 };
 
 // Add Source Handler pattern functions to this tech
