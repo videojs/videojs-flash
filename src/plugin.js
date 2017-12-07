@@ -88,7 +88,7 @@ class Flash extends Tech {
     // Otherwise this adds a CDN url.
     // The CDN also auto-adds a swf URL for that specific version.
     if (!options.swf) {
-      options.swf = `//vjs.zencdn.net/swf/${SWF_VERSION}/video-js.swf`;
+      options.swf = `https://vjs.zencdn.net/swf/${SWF_VERSION}/video-js.swf`;
     }
 
     // Generate ID for swf object
