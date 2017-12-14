@@ -1,3 +1,15 @@
+<a name="2.0.2"></a>
+## [2.0.2](https://github.com/videojs/videojs-flash/compare/v2.0.1...v2.0.2) (2017-12-14)
+
+### Bug Fixes
+
+* Always load SWF file over HTTPS ([#52](https://github.com/videojs/videojs-flash/issues/52)) ([58c7276](https://github.com/videojs/videojs-flash/commit/58c7276))
+* returns true for support on desktop chrome and safari ([#39](https://github.com/videojs/videojs-flash/issues/39)) ([eea6baa](https://github.com/videojs/videojs-flash/commit/eea6baa)), closes [#26](https://github.com/videojs/videojs-flash/issues/26)
+
+### Documentation
+
+* Add a CDN link to README ([#37](https://github.com/videojs/videojs-flash/issues/37)) ([9f8ad52](https://github.com/videojs/videojs-flash/commit/9f8ad52))
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/videojs/videojs-flash/compare/v2.0.0...v2.0.1) (2017-07-27)
 
