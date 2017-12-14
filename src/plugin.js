@@ -1028,7 +1028,12 @@ Flash.onError = function(swfID, err) {
   }
 
   // trigger a custom error
-  tech.error('FLASH: ' + err);
+  if (typeof err === 'string') {
+    tech.error('FLASH: ' + err);
+  } else {
+    err.origin = 'flash';
+    tech.error(err);
+  }
 };
 
 /**
