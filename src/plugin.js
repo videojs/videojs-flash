@@ -815,12 +815,17 @@ for (let i = 0; i < _readOnly.length; i++) {
  * Check if the Flash tech is currently supported.
  *
  * @return {boolean}
- *          - True if the flash tech is supported.
- *          - False otherwise.
+ *          - True for Chrome and Safari Desktop and if flash tech is supported
+ *          - False otherwise
  */
 Flash.isSupported = function() {
+  // for Chrome Desktop and Safari Desktop
+  if ((videojs.browser.IS_CHROME && !videojs.browser.IS_ANDROID) ||
+    (videojs.browser.IS_SAFARI && !videojs.browser.IS_IOS)) {
+    return true;
+  }
+  // for other browsers
   return Flash.version()[0] >= 10;
-  // return swfobject.hasFlashPlayerVersion('10');
 };
 
 // Add Source Handler pattern functions to this tech
