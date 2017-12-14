@@ -1,3 +1,15 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/videojs/videojs-flash/compare/v2.0.2...v2.1.0) (2017-12-14)
+
+### Features
+
+* forward errors from swf without altering when error is not just a string ([#55](https://github.com/videojs/videojs-flash/issues/55)) ([e594ffa](https://github.com/videojs/videojs-flash/commit/e594ffa))
+
+### Chores
+
+* add .nvmrc to point at node LTS ([1da7ce8](https://github.com/videojs/videojs-flash/commit/1da7ce8))
+* add in-publish to build process and use node 8 in CI ([#56](https://github.com/videojs/videojs-flash/issues/56)) ([8605ef3](https://github.com/videojs/videojs-flash/commit/8605ef3))
+
 <a name="2.0.2"></a>
 ## [2.0.2](https://github.com/videojs/videojs-flash/compare/v2.0.1...v2.0.2) (2017-12-14)
 
