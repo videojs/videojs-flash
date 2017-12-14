@@ -20,6 +20,11 @@ The npm installation is preferred, but Bower works, too.
 bower install  --save videojs-flash
 ```
 
+You can also use it via a CDN:
+ ```html
+<script src="https://cdn.jsdelivr.net/npm/videojs-flash@2/dist/videojs-flash.min.js"></script>
+ ```
+
 ## Adding the Flash Tech to video.js
 
 To include videojs-flash on your website or web application, use any of the following methods.
