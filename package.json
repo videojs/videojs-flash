@@ -1,6 +1,6 @@
 {
   "name": "videojs-flash",
-  "version": "2.0.1",
+  "version": "2.0.2-0",
   "description": "The official Flash tech package for Video.js.",
   "main": "dist/videojs-flash.cjs.js",
   "module": "dist/videojs-flash.es.js",
