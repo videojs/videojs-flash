@@ -21,7 +21,6 @@
     "start:server": "static -a 0.0.0.0 -p 9999 -H '{\"Cache-Control\": \"no-cache, must-revalidate\"}' .",
     "pretest": "npm-run-all lint build",
     "test": "karma start test/karma.conf.js",
-    "preversion": "npm test",
     "version": "node scripts/version.js",
     "watch": "npm-run-all -p watch:*",
     "watch:js-modules": "rollup -c scripts/modules.rollup.config.js -w",
