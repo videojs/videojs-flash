@@ -70,7 +70,7 @@ function FlashRtmpDecorator(Flash) {
     // Look for the normal URL separator we expect, '&'.
     // If found, we split the URL into two pieces around the
     // first '&'.
-    let connEnd = src.search(/&(?!\w+=)/);
+    let connEnd = src.search(/&(?![\w-]+=)/);
     let streamBegin;
 
     if (connEnd !== -1) {
