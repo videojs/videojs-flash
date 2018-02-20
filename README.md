@@ -1,5 +1,7 @@
 # videojs-flash
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/videojs/videojs-flash.svg)](https://greenkeeper.io/)
+
 The official flash tech for the videojs player.
 
 > NOTE: This should only be used with Video.js >= 6.0.0 as the flash tech is build into versions before that!
