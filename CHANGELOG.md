@@ -1,3 +1,12 @@
+<a name="2.1.1"></a>
+## [2.1.1](https://github.com/videojs/videojs-flash/compare/v2.1.0...v2.1.1) (2018-07-05)
+
+### Chores
+
+* enable Greenkeeper 🌴 ([#62](https://github.com/videojs/videojs-flash/issues/62)) ([09963ea](https://github.com/videojs/videojs-flash/commit/09963ea))
+* update to add vjs 7 support ([#75](https://github.com/videojs/videojs-flash/issues/75)) ([7fd4a27](https://github.com/videojs/videojs-flash/commit/7fd4a27)), closes [#76](https://github.com/videojs/videojs-flash/issues/76)
+* **package:** update conventional-changelog-cli to version 2.0.0 ([#72](https://github.com/videojs/videojs-flash/issues/72)) ([d9366f7](https://github.com/videojs/videojs-flash/commit/d9366f7))
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/videojs/videojs-flash/compare/v2.0.2...v2.1.0) (2017-12-14)
 
