@@ -1,6 +1,10 @@
 # videojs-flash
 
+[![Build Status](https://travis-ci.org/videojs/videojs-flash.svg?branch=master)](https://travis-ci.org/videojs/videojs-flash)
 [![Greenkeeper badge](https://badges.greenkeeper.io/videojs/videojs-flash.svg)](https://greenkeeper.io/)
+[![Slack Status](http://slack.videojs.com/badge.svg)](http://slack.videojs.com)
+
+[![NPM](https://nodei.co/npm/videojs-flash.png?downloads=true&downloadRank=true)](https://nodei.co/npm/videojs-flash/)
 
 The official flash tech for the videojs player.
 
@@ -8,8 +12,18 @@ The official flash tech for the videojs player.
 
 ## Table of Contents
 
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Installation](#installation)
+- [Adding the Flash Tech to video.js](#adding-the-flash-tech-to-videojs)
+  - [`<script>` Tag](#script-tag)
+  - [Browserify](#browserify)
+  - [RequireJS/AMD](#requirejsamd)
+- [Force Flash playback](#force-flash-playback)
+- [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ## Installation
 
 ```sh
