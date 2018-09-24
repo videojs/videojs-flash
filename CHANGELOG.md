@@ -1,3 +1,16 @@
+<a name="2.1.2"></a>
+## [2.1.2](https://github.com/videojs/videojs-flash/compare/v2.1.1...v2.1.2) (2018-09-24)
+
+### Bug Fixes
+
+* **package:** update videojs-swf to version 5.4.2 🚀 ([#90](https://github.com/videojs/videojs-flash/issues/90)) ([fe0d952](https://github.com/videojs/videojs-flash/commit/fe0d952))
+* rtmp parameters can contains "-" ([#59](https://github.com/videojs/videojs-flash/issues/59)) ([3d5087d](https://github.com/videojs/videojs-flash/commit/3d5087d))
+
+### Chores
+
+* update index.html to work better ([#85](https://github.com/videojs/videojs-flash/issues/85)) ([e5e990f](https://github.com/videojs/videojs-flash/commit/e5e990f))
+* **package-lock:** upgrade to npm 6.4.1 ([aa8db77](https://github.com/videojs/videojs-flash/commit/aa8db77))
+
 <a name="2.1.1"></a>
 ## [2.1.1](https://github.com/videojs/videojs-flash/compare/v2.1.0...v2.1.1) (2018-07-05)
 
