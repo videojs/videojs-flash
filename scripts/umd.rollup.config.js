@@ -10,14 +10,16 @@ import json from 'rollup-plugin-json';
 import resolve from 'rollup-plugin-node-resolve';
 
 export default {
-  moduleName: 'videojsFlash',
   entry: 'src/plugin.js',
-  dest: 'dist/videojs-flash.js',
-  format: 'umd',
-  external: ['video.js'],
-  globals: {
-    'video.js': 'videojs'
+  output: {
+    file: 'dist/videojs-flash.js',
+    format: 'umd',
+    name: 'videojsFlash',
+    globals: {
+      'video.js': 'videojs'
+    }
   },
+  external: ['video.js'],
   legacy: true,
   plugins: [
     resolve({

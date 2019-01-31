@@ -9,12 +9,8 @@ import babel from 'rollup-plugin-babel';
 import json from 'rollup-plugin-json';
 
 export default {
-  moduleName: 'videojsFlash',
-  entry: 'src/plugin.js',
+  input: 'src/plugin.js',
   external: ['video.js'],
-  globals: {
-    'video.js': 'videojs'
-  },
   legacy: true,
   plugins: [
     json(),
@@ -34,8 +30,22 @@ export default {
       ]
     })
   ],
-  targets: [
-    {dest: 'dist/videojs-flash.cjs.js', format: 'cjs'},
-    {dest: 'dist/videojs-flash.es.js', format: 'es'}
+  output: [
+    {
+      file: 'dist/videojs-flash.cjs.js',
+      format: 'cjs',
+      name: 'videojsFlash',
+      globals: {
+        'video.js': 'videojs'
+      }
+    },
+    {
+      file: 'dist/videojs-flash.es.js',
+      format: 'es',
+      name: 'videojsFlash',
+      globals: {
+        'video.js': 'videojs'
+      }
+    }
   ]
 };
