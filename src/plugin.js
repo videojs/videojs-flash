@@ -28,7 +28,7 @@ const navigator = window && window.navigator || {};
  */
 class Flash extends Tech {
 
- /**
+  /**
   * Create an instance of this Tech.
   *
   * @param {Object} [options]

@@ -18,8 +18,10 @@ QUnit.test('Flash.canPlaySource', function(assert) {
   const canPlaySource = Flash.canPlaySource;
 
   // Supported
-  assert.ok(canPlaySource({type: 'video/mp4; codecs=avc1.42E01E,mp4a.40.2' }, {}),
-           'codecs supported');
+  assert.ok(
+    canPlaySource({type: 'video/mp4; codecs=avc1.42E01E,mp4a.40.2' }, {}),
+    'codecs supported'
+  );
   assert.ok(canPlaySource({type: 'video/mp4' }, {}), 'video/mp4 supported');
   assert.ok(canPlaySource({type: 'video/x-flv' }, {}), 'video/x-flv supported');
   assert.ok(canPlaySource({type: 'video/flv' }, {}), 'video/flv supported');
@@ -79,12 +81,16 @@ QUnit.test('currentTime', function(assert) {
   setCurrentTime.call(mockFlash, 20);
   seeking = true;
   result = getCurrentTime.call(mockFlash);
-  assert.equal(result,
-              20,
-              'currentTime is retrieved from the lastSeekTarget while seeking');
-  assert.notEqual(result,
-                 getPropVal,
-                 'currentTime is not retrieved from the element while seeking');
+  assert.equal(
+    result,
+    20,
+    'currentTime is retrieved from the lastSeekTarget while seeking'
+  );
+  assert.notEqual(
+    result,
+    getPropVal,
+    'currentTime is not retrieved from the element while seeking'
+  );
   assert.equal(seekingCount, 2, 'triggered seeking');
 
   // clamp seeks to seekable
@@ -142,8 +148,10 @@ QUnit.test('ready triggering before and after disposing the tech', function(asse
   // remove the tech el from the player div to simulate being disposed
   playerDiv.removeChild(techEl);
   Flash.onReady(techEl.id);
-  assert.ok(!checkReady.calledTwice,
-           'checkReady should not be called after the tech is disposed');
+  assert.ok(
+    !checkReady.calledTwice,
+    'checkReady should not be called after the tech is disposed'
+  );
 
   Flash.checkReady.restore();
 });
@@ -159,26 +167,36 @@ QUnit.test('canPlayType should select the correct types to play', function(asser
   assert.equal(canPlayType('video/x-flv'), 'maybe', 'should be able to play x-FLV files');
   assert.equal(canPlayType('video/mp4'), 'maybe', 'should be able to play MP4 files');
   assert.equal(canPlayType('video/m4v'), 'maybe', 'should be able to play M4V files');
-  assert.equal(canPlayType('video/ogg'),
-              '',
-              'should return empty string if it can not play the video');
+  assert.equal(
+    canPlayType('video/ogg'),
+    '',
+    'should return empty string if it can not play the video'
+  );
 });
 
 QUnit.test('canHandleSource should be able to work with src objects without a type', function(assert) {
   const canHandleSource = Flash.nativeSourceHandler.canHandleSource;
 
-  assert.equal('maybe',
-              canHandleSource({ src: 'test.video.mp4' }, {}),
-              'should guess that it is a mp4 video');
-  assert.equal('maybe',
-              canHandleSource({ src: 'test.video.m4v' }, {}),
-              'should guess that it is a m4v video');
-  assert.equal('maybe',
-              canHandleSource({ src: 'test.video.flv' }, {}),
-              'should guess that it is a flash video');
-  assert.equal('',
-              canHandleSource({ src: 'test.video.wgg' }, {}),
-              'should return empty string if it can not play the video');
+  assert.equal(
+    'maybe',
+    canHandleSource({ src: 'test.video.mp4' }, {}),
+    'should guess that it is a mp4 video'
+  );
+  assert.equal(
+    'maybe',
+    canHandleSource({ src: 'test.video.m4v' }, {}),
+    'should guess that it is a m4v video'
+  );
+  assert.equal(
+    'maybe',
+    canHandleSource({ src: 'test.video.flv' }, {}),
+    'should guess that it is a flash video'
+  );
+  assert.equal(
+    '',
+    canHandleSource({ src: 'test.video.wgg' }, {}),
+    'should return empty string if it can not play the video'
+  );
 });
 
 QUnit.test('seekable', function(assert) {
@@ -200,8 +218,10 @@ QUnit.test('seekable', function(assert) {
   // Test a zero duration
   mockFlash.duration_ = 0;
   result = seekable.call(mockFlash);
-  assert.equal(result.length, mockFlash.duration_,
-              'seekable is empty with a zero duration');
+  assert.equal(
+    result.length, mockFlash.duration_,
+    'seekable is empty with a zero duration'
+  );
 });
 
 QUnit.test('play after ended seeks to the beginning', function(assert) {
@@ -252,15 +272,19 @@ QUnit.test('duration returns NaN, Infinity or duration according to the HTML sta
 
   mockedReadyState = 1;
   result = duration.call(mockFlash);
-  assert.ok(!Number.isFinite(result),
-           'duration returns Infinity when duration property is less then 0');
+  assert.ok(
+    !Number.isFinite(result),
+    'duration returns Infinity when duration property is less then 0'
+  );
 
   mockedDuration = 1;
   result = duration.call(mockFlash);
-  assert.equal(result,
-              1,
-              'duration returns duration property when readyState' +
-              ' and duration property are both higher than 0');
+  assert.equal(
+    result,
+    1,
+    'duration returns duration property when readyState' +
+              ' and duration property are both higher than 0'
+  );
 });
 
 QUnit.test('getVideoPlaybackQuality API exists', function(assert) {
@@ -277,13 +301,17 @@ QUnit.test('getVideoPlaybackQuality API exists', function(assert) {
     }
   };
 
-  assert.deepEqual(Flash.prototype.getVideoPlaybackQuality.call(mockFlash),
-                   videoPlaybackQuality,
-                   'called to get property from flash');
+  assert.deepEqual(
+    Flash.prototype.getVideoPlaybackQuality.call(mockFlash),
+    videoPlaybackQuality,
+    'called to get property from flash'
+  );
   assert.equal(propertyCalls.length, 1, 'only one property call');
-  assert.equal(propertyCalls[0],
-               'getVideoPlaybackQuality',
-               'called for getVideoPlaybackQuality');
+  assert.equal(
+    propertyCalls[0],
+    'getVideoPlaybackQuality',
+    'called for getVideoPlaybackQuality'
+  );
 });
 
 QUnit.test('getVideoPlaybackQuality uses best available creationTime', function(assert) {
@@ -301,21 +329,27 @@ QUnit.test('getVideoPlaybackQuality uses best available creationTime', function(
   };
 
   window.performance = void 0;
-  assert.notOk(Flash.prototype.getVideoPlaybackQuality.call(mockFlash).creationTime,
-               'no creationTime when no performance API available');
+  assert.notOk(
+    Flash.prototype.getVideoPlaybackQuality.call(mockFlash).creationTime,
+    'no creationTime when no performance API available'
+  );
 
   window.performance = {
     timing: {}
   };
-  assert.notOk(Flash.prototype.getVideoPlaybackQuality.call(mockFlash).creationTime,
-               'no creationTime when performance API insufficient');
+  assert.notOk(
+    Flash.prototype.getVideoPlaybackQuality.call(mockFlash).creationTime,
+    'no creationTime when performance API insufficient'
+  );
 
   window.performance = {
     now: () => 4
   };
-  assert.equal(Flash.prototype.getVideoPlaybackQuality.call(mockFlash).creationTime,
-               4,
-               'creationTime is performance.now when available');
+  assert.equal(
+    Flash.prototype.getVideoPlaybackQuality.call(mockFlash).creationTime,
+    4,
+    'creationTime is performance.now when available'
+  );
 
   window.Date = {
     now: () => 10
@@ -325,14 +359,18 @@ QUnit.test('getVideoPlaybackQuality uses best available creationTime', function(
       navigationStart: 3
     }
   };
-  assert.equal(Flash.prototype.getVideoPlaybackQuality.call(mockFlash).creationTime,
-               7,
-               'creationTime uses Date.now() - navigationStart when available');
+  assert.equal(
+    Flash.prototype.getVideoPlaybackQuality.call(mockFlash).creationTime,
+    7,
+    'creationTime uses Date.now() - navigationStart when available'
+  );
 
   window.performance.now = () => 4;
-  assert.equal(Flash.prototype.getVideoPlaybackQuality.call(mockFlash).creationTime,
-               4,
-               'creationTime prioritizes performance.now when available');
+  assert.equal(
+    Flash.prototype.getVideoPlaybackQuality.call(mockFlash).creationTime,
+    4,
+    'creationTime prioritizes performance.now when available'
+  );
 
   window.Date = origDate;
   window.performance = origPerformance;
