@@ -70,6 +70,7 @@
     "karma-ie-launcher": "^1.0.0",
     "karma-qunit": "^1.2.1",
     "karma-safari-launcher": "^1.0.0",
+    "karma-safaritechpreview-launcher": "0.0.6",
     "mkdirp": "^0.5.1",
     "node-static": "^0.7.9",
     "npm-run-all": "^4.0.2",
