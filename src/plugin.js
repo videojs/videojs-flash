@@ -815,13 +815,14 @@ for (let i = 0; i < _readOnly.length; i++) {
  * Check if the Flash tech is currently supported.
  *
  * @return {boolean}
- *          - True for Chrome and Safari Desktop and if flash tech is supported
+ *          - True for Chrome and Safari Desktop and Microsoft Edge and if flash tech is supported
  *          - False otherwise
  */
 Flash.isSupported = function() {
   // for Chrome Desktop and Safari Desktop
   if ((videojs.browser.IS_CHROME && !videojs.browser.IS_ANDROID) ||
-    (videojs.browser.IS_SAFARI && !videojs.browser.IS_IOS)) {
+    (videojs.browser.IS_SAFARI && !videojs.browser.IS_IOS) ||
+    videojs.browser.IS_EDGE) {
     return true;
   }
   // for other browsers
