@@ -27,8 +27,7 @@
     "watch:js-modules": "rollup -c scripts/modules.rollup.config.js -w",
     "watch:js-umd": "rollup -c scripts/umd.rollup.config.js -w",
     "watch:test": "rollup -c scripts/test.rollup.config.js -w",
-    "prepublish": "not-in-install && npm run build || in-install",
-    "prepush": "npm run lint"
+    "prepublish": "not-in-install && npm run build || in-install"
   },
   "keywords": [
     "videojs",
@@ -61,7 +60,7 @@
     "conventional-changelog-cli": "^2.0.11",
     "conventional-changelog-videojs": "^3.0.0",
     "es5-shim": "^4.5.9",
-    "husky": "^0.13.3",
+    "husky": "^0.13.4",
     "in-publish": "^2.0.0",
     "karma": "^4.0.0",
     "karma-chrome-launcher": "^2.1.1",
@@ -109,5 +108,10 @@
       "test/dist",
       "test/karma.conf.js"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
   }
 }
