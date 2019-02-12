@@ -1,3 +1,14 @@
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/videojs/videojs-flash/compare/v2.1.2...v2.2.0) (2019-02-12)
+
+### Features
+
+* support microsoft edge ([#111](https://github.com/videojs/videojs-flash/issues/111)) ([34ffa8e](https://github.com/videojs/videojs-flash/commit/34ffa8e))
+
+### Chores
+
+* minimal rollup update along with npm audit updates to get build working ([#116](https://github.com/videojs/videojs-flash/issues/116)) ([94eecb4](https://github.com/videojs/videojs-flash/commit/94eecb4))
+
 <a name="2.1.2"></a>
 ## [2.1.2](https://github.com/videojs/videojs-flash/compare/v2.1.1...v2.1.2) (2018-09-24)
 
