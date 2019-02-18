@@ -83,7 +83,7 @@
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-watch": "^3.2.2",
     "semver": "^5.3.0",
-    "sinon": "^2.2.0",
+    "sinon": "^7.2.4",
     "uglify-js": "^3.0.7",
     "videojs-standard": "^8.0.2"
   },
