@@ -408,7 +408,7 @@ function _createSetter(attr) {
 }
 
 /**
- * Create petters for the swf on the element
+ * Create getters for the swf on the element
  *
  * @param {string} attr
  *        The name of the parameter
