@@ -63,7 +63,7 @@
     "husky": "^0.13.4",
     "in-publish": "^2.0.0",
     "karma": "^4.0.0",
-    "karma-chrome-launcher": "^2.1.1",
+    "karma-chrome-launcher": "^3.0.0",
     "karma-detect-browsers": "^2.2.5",
     "karma-firefox-launcher": "^1.0.1",
     "karma-ie-launcher": "^1.0.0",
