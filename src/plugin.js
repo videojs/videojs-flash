@@ -820,7 +820,7 @@ for (let i = 0; i < _readOnly.length; i++) {
  */
 Flash.isSupported = function() {
   // for Chrome Desktop and Safari Desktop
-  if ((videojs.browser.IS_CHROME && !videojs.browser.IS_ANDROID) ||
+  if ((videojs.browser.IS_CHROME && (!videojs.browser.IS_ANDROID || !videojs.browser.IS_IOS)) ||
     (videojs.browser.IS_SAFARI && !videojs.browser.IS_IOS) ||
     videojs.browser.IS_EDGE) {
     return true;
