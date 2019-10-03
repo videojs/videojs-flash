@@ -1,3 +1,15 @@
+<a name="2.2.1"></a>
+## [2.2.1](https://github.com/videojs/videojs-flash/compare/v2.2.0...v2.2.1) (2019-10-03)
+
+### Bug Fixes
+
+* ignore Chrome on iOS ([#143](https://github.com/videojs/videojs-flash/issues/143)) ([e586938](https://github.com/videojs/videojs-flash/commit/e586938)), closes [#142](https://github.com/videojs/videojs-flash/issues/142)
+* typo with getters ([#120](https://github.com/videojs/videojs-flash/issues/120)) ([2f4f435](https://github.com/videojs/videojs-flash/commit/2f4f435))
+
+### Chores
+
+* Update deps ([#144](https://github.com/videojs/videojs-flash/issues/144)) ([1203664](https://github.com/videojs/videojs-flash/commit/1203664))
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/videojs/videojs-flash/compare/v2.1.2...v2.2.0) (2019-02-12)
 
