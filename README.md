@@ -101,6 +101,6 @@ videojs('some-video-id', {techOrder: ['flash']});
 ## License
 
 Apache-2.0. Copyright (c) Brightcove, Inc.
-
+">Creative Commons Attribution 4.0 International License</a>
 
 [videojs]: http://videojs.com/
