@@ -60,7 +60,7 @@
     "conventional-changelog-cli": "^2.0.23",
     "conventional-changelog-videojs": "^3.0.0",
     "es5-shim": "^4.5.13",
-    "husky": "^3.0.8",
+    "husky": "^4.2.3",
     "in-publish": "^2.0.0",
     "karma": "^4.3.0",
     "karma-chrome-launcher": "^3.1.0",
