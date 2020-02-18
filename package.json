@@ -84,7 +84,7 @@
     "rollup-watch": "^3.2.2",
     "semver": "^6.3.0",
     "sinon": "^7.5.0",
-    "uglify-js": "^3.6.0",
+    "uglify-js": "^3.8.0",
     "videojs-standard": "^8.0.4"
   },
   "repository": {
