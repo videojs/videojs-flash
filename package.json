@@ -47,7 +47,7 @@
   ],
   "dependencies": {
     "global": "^4.4.0",
-    "video.js": "^6 || ^7",
+    "video.js": "^7.7.5",
     "videojs-swf": "5.4.2"
   },
   "devDependencies": {
