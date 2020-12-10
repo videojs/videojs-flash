@@ -1,3 +1,5 @@
+# This project is no longer maintained as Adobe Flash is being [End-of-lifed.](https://www.adobe.com/products/flashplayer/end-of-life.html)
+
 # videojs-flash
 
 [![Build Status](https://travis-ci.org/videojs/videojs-flash.svg?branch=master)](https://travis-ci.org/videojs/videojs-flash)
